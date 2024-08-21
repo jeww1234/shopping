@@ -8,6 +8,7 @@ const ProductAll = () => {
     let respone = await fetch(url)
     let data = await respone.json()
     setProductList(data)
+    console.log(productList)
 
   }
   useEffect(()=>{
