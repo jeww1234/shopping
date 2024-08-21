@@ -6,15 +6,31 @@
 .nav-section{
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .menu-list{
     display: flex;
     list-style-type: none;
 }
 .menu-list li{
-    padding: 10px;
+    padding: 0px 10px;
 }
 .menu-area{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-left: 40vh;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+}
+.search-input{
+    border-style: none;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    
+}
+.search-icon{
+    border-bottom: 1px solid black;
+    padding: 4px;
 }

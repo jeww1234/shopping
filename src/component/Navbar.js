@@ -34,9 +34,9 @@ const Navbar = () => {
             <li>{menu}</li>
           ))}
         </ul>
-        <div>
-          <FontAwesomeIcon icon={faSearch} />
-          <input type="text"/>
+        <div className="search-bar">
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          <input className="search-input" type="text"/>
         </div>
       </div>
     </div>
