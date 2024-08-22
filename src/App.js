@@ -23,7 +23,8 @@ import PrivateRoute from './route/PrivateRoute';
 function App() {
   const [authenticate, setAuthenticate]=useState(false) //true 로그인 o false 로그인 x
   useEffect(()=>{
-    console.log("authenticate", authenticate)
+    console.log("authenticate1", authenticate)
+    console.log("authenticate2", authenticate)
   },[authenticate])
   return (
     <div>
@@ -31,7 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ProductAll />} />
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
-        <Route path='' element={<PrivateRoute authenticate={authenticate}/>} />
+        <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate}/>} />
       </Routes>
       
     </div>
