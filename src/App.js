@@ -24,7 +24,6 @@ function App() {
   const [authenticate, setAuthenticate]=useState(false) //true 로그인 o false 로그인 x
   useEffect(()=>{
     console.log("authenticate1", authenticate)
-    console.log("authenticate2", authenticate)
   },[authenticate])
   return (
     <div>
