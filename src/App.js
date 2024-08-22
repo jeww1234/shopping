@@ -2,8 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
-import ProductDetail from './page/ProductDetail';
-import Navbar from './component/Navbar';
+import Navbarr from './component/Navbarr';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect, useState } from 'react';
+import PrivateRoute from './route/PrivateRoute';
 
 
 //1.  전체상품페이지, 로그인, 상품사세페이지
@@ -19,13 +21,17 @@ import Navbar from './component/Navbar';
 
 
 function App() {
+  const [authenticate, setAuthenticate]=useState(false) //true 로그인 o false 로그인 x
+  useEffect(()=>{
+    console.log("authenticate", authenticate)
+  },[authenticate])
   return (
     <div>
-      <Navbar />
+      <Navbarr />
       <Routes>
         <Route path='/' element={<ProductAll />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/product/:id' element={<ProductDetail />} />
+        <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
+        <Route path='' element={<PrivateRoute authenticate={authenticate}/>} />
       </Routes>
       
     </div>

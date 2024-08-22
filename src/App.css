@@ -2,6 +2,8 @@
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    cursor: pointer;
+    align-items: center;
 }
 .nav-section{
     display: flex;
@@ -11,26 +13,34 @@
 .menu-list{
     display: flex;
     list-style-type: none;
+    align-items: center;
+    margin: 0;
 }
 .menu-list li{
     padding: 0px 10px;
+    display: flex;
+    
 }
 .menu-area{
     display: flex;
-    justify-content: space-evenly;
-    margin-left: 40vh;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
 }
 .search-bar{
     display: flex;
     align-items: center;
 }
 .search-input{
-    border-style: none;
-    border-bottom: 1px solid black;
-    padding: 5px;
+
     
 }
 .search-icon{
-    border-bottom: 1px solid black;
-    padding: 4px;
+
+}
+.product-img{
+    width: 30vh;
+}
+.product-card:hover{
+    scale: 105%;
 }
