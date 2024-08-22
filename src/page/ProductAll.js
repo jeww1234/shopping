@@ -6,11 +6,11 @@ import { Col, Row } from "react-bootstrap";
 const ProductAll = () => {
   const [productList, setProductList] = useState();
   const getProducts = async () => {
-    let url = 'http://localhost:5000/products';
-    let respons = await fetch(url);
-    let data = await respons.json();
+    let url = "http://localhost:5000/products";
+    let response = await fetch(url);
+    let data = await response.json();
+    console.log("개빡",data)
     setProductList(data);
-
   };
   useEffect(() => {
     getProducts();
@@ -18,12 +18,13 @@ const ProductAll = () => {
   return (
     <div>
       <Container>
-      <Row>
-          {productList && productList.map((menu) => (
-            <Col lg={3}>
-              <ProductCard item={menu}/>
-            </Col>
-          ))}
+        <Row>
+          {productList &&
+            productList.map((menu) => (
+              <Col lg={3}>
+                <ProductCard item={menu} />
+              </Col>
+            ))}
         </Row>
       </Container>
     </div>
