@@ -9,7 +9,6 @@ const ProductAll = () => {
     let url = "http://localhost:5000/products";
     let response = await fetch(url);
     let data = await response.json();
-    console.log("개빡",data)
     setProductList(data);
   };
   useEffect(() => {
