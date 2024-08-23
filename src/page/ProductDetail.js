@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   console.log(product);
   const getProductDetail = useCallback(async () => {
-    let url = `https://my-json-server.typicode.com/<jeww1234>/<shopping>/${id}`;
+    let url = `https://my-json-server.typicode.com/jeww1234/shopping/${id}`;
     console.log(url);
     let response = await fetch(url);
     console.log(response);

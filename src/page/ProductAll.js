@@ -10,7 +10,7 @@ const ProductAll = () => {
   const getProducts = useCallback(async () => {
     let searchQuery = query.get("q") || "";
     console.log(query);
-    let url = `https://my-json-server.typicode.com/<jeww1234>/<shopping>/products?q=${searchQuery}`;
+    let url = `https://my-json-server.typicode.com/jeww1234/shopping/products?q=${searchQuery}`;
     console.log("url", url);
     let response = await fetch(url);
     let data = await response.json();
