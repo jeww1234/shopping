@@ -6,6 +6,7 @@ import Navbarr from './component/Navbarr';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
 import PrivateRoute from './route/PrivateRoute';
+import Logout from './page/Logout';
 
 
 //1.  전체상품페이지, 로그인, 상품사세페이지
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<ProductAll />} />
         <Route path='/login' element={<Login setAuthenticate={setAuthenticate} />} />
+        <Route path='/Logout' element={<Logout setAuthenticate={setAuthenticate} />} />
         <Route path='/product/:id' element={<PrivateRoute authenticate={authenticate}/>} />
       </Routes>      
     </div>

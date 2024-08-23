@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { Container } from "react-bootstrap";
 
 const Navbarr = () => {
   const menulist = [
@@ -45,7 +46,7 @@ const Navbarr = () => {
           alt=""
         />
       </div>
-      <div className="menu-area">
+      <Container className="menu-area">
         <ul className="menu-list">
           {menulist.map((menu) => (
             <li>{menu}</li>
@@ -55,7 +56,7 @@ const Navbarr = () => {
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
           <input className="search-input" type="text" onKeyPress={(event)=>search(event)} />
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
