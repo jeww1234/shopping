@@ -18,6 +18,9 @@ const Navbarr = () => {
   const goTologin = ()=>{
     navigate('/login')
   }
+  const goTologHome = () =>{
+    navigate('/')
+  }
   return (
     <div>
       <div>
@@ -26,7 +29,7 @@ const Navbarr = () => {
           <div>로그인</div>
         </div>
       </div>
-      <div className="nav-section">
+      <div className="nav-section" onClick={goTologHome}>
         <img
           width={200}
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSWOhkrtrLKgKz35SOCEsZV-v2q_yeKpMgw&s"
