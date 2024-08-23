@@ -21,6 +21,15 @@ const Navbarr = () => {
   const goTologHome = () =>{
     navigate('/')
   }
+  const search =(event)=>{
+    
+    if(event.key === "Enter"){
+      console.log("keypree")
+      let keyword =event.target.value
+      console.log(keyword)
+      navigate(`/?q=${keyword}`)
+    }
+  }
   return (
     <div>
       <div>
@@ -44,7 +53,7 @@ const Navbarr = () => {
         </ul>
         <div className="search-bar">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
-          <input className="search-input" type="text"/>
+          <input className="search-input" type="text" onKeyPress={(event)=>search(event)} />
         </div>
       </div>
     </div>

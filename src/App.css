@@ -50,3 +50,33 @@
     align-items: center;
     margin-bottom: 20px;
 }
+.product-box>div{
+    font-size: 3vh;
+    margin: 10px;
+}
+.detail-box{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.img-box{
+    display: flex;
+    justify-content: center;
+}
+.new{
+    font-weight: bolder;
+    color:  rgb(69, 189, 65);
+    -webkit-text-stroke: 0.2px rgb(0, 204, 255);
+}
+.choice{
+    color: red;
+}
+.size-button{
+    display: flex;
+    margin: 0px;
+    justify-content: center;
+}
+.size-button button{
+    width: 100%;
+    font-size: 2vh;
+}
