@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faHamburger, faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +17,7 @@ const Navbarr = ({ authenticate, setAuthenticate }) => {
     "Sale",
     "지속가능성",
   ];
+  let [display, setDisplay] = useState()
   const navigate = useNavigate();
   const goTologin = () => {
     navigate("/login");
@@ -34,8 +35,18 @@ const Navbarr = ({ authenticate, setAuthenticate }) => {
   };
   return (
     <div>
+      <div className="side-menu" style={{ display: display }}>
+        <button className="closebtn" onClick={() => setDisplay("none")}>
+          &times;
+        </button>
+        <div className="side-menu-list" id="menu-list">
+          {menulist.map((menu, index) => (
+            <button key={index}>{menu}</button>
+          ))}
+        </div>
+      </div>
       <div className="hamham">
-        <FontAwesomeIcon className="ham-button" icon={faHamburger} />
+        <FontAwesomeIcon className="ham-button" icon={faHamburger} onClick={() => setDisplay("block")}/>
         <div className="login-button" onClick={goTologin}>
           {authenticate ? (
           <div onClick={() => setAuthenticate(false)}>
