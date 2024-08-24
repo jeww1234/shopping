@@ -3,6 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({setAuthenticate}) => {
+  console.log("in-set", {setAuthenticate})
   const navigate = useNavigate()
   const loginUser =(event)=>{
     event.preventDefault();

@@ -1,11 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faHamburger, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
-const Navbarr = () => {
+const Navbarr = ({ authenticate, setAuthenticate }) => {
+  console.log("au", authenticate)
+  console.log("sau", setAuthenticate)
   const menulist = [
     "여성",
     "Divided",
@@ -15,28 +17,37 @@ const Navbarr = () => {
     "Sale",
     "지속가능성",
   ];
-  const navigate = useNavigate()
-  const goTologin = ()=>{
-    navigate('/login')
-  }
-  const goTologHome = () =>{
-    navigate('/')
-  }
-  const search =(event)=>{
-    
-    if(event.key === "Enter"){
-      console.log("keypree")
-      let keyword =event.target.value
-      console.log(keyword)
-      navigate(`/?q=${keyword}`)
+  const navigate = useNavigate();
+  const goTologin = () => {
+    navigate("/login");
+  };
+  const goTologHome = () => {
+    navigate("/");
+  };
+  const search = (event) => {
+    if (event.key === "Enter") {
+      console.log("keypree");
+      let keyword = event.target.value;
+      console.log(keyword);
+      navigate(`/?q=${keyword}`);
     }
-  }
+  };
   return (
     <div>
-      <div>
+      <div className="hamham">
+        <FontAwesomeIcon className="ham-button" icon={faHamburger} />
         <div className="login-button" onClick={goTologin}>
-          <FontAwesomeIcon icon={faUser} />
-          <div>로그인</div>
+          {authenticate ? (
+          <div onClick={() => setAuthenticate(false)}>
+            <FontAwesomeIcon icon={faUser} />
+            <span style={{ cursor: "pointer" }}>로그아웃</span>
+          </div>
+        ) : (
+          <div onClick={() => navigate("/login")}>
+            <FontAwesomeIcon icon={faUser} />
+            <span style={{ cursor: "pointer" }}>로그인</span>
+          </div>
+        )}
         </div>
       </div>
       <div className="nav-section" onClick={goTologHome}>
@@ -54,7 +65,11 @@ const Navbarr = () => {
         </ul>
         <div className="search-bar">
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
-          <input className="search-input" type="text" onKeyPress={(event)=>search(event)} />
+          <input
+            className="search-input"
+            type="text"
+            onKeyPress={(event) => search(event)}
+          />
         </div>
       </Container>
     </div>
