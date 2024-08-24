@@ -39,7 +39,7 @@ const Navbarr = ({ authenticate, setAuthenticate }) => {
         <button className="closebtn" onClick={() => setDisplay("none")}>
           &times;
         </button>
-        <div className="side-menu-list" id="menu-list">
+        <div className="side-menu-list" id="menu-list" onClick={() => setDisplay("none")}>
           {menulist.map((menu, index) => (
             <button key={index}>{menu}</button>
           ))}
@@ -63,7 +63,7 @@ const Navbarr = ({ authenticate, setAuthenticate }) => {
       </div>
       <div className="nav-section" onClick={goTologHome}>
         <img
-          width={200}
+          width={150}
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSWOhkrtrLKgKz35SOCEsZV-v2q_yeKpMgw&s"
           alt=""
         />
