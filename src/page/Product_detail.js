@@ -7,7 +7,7 @@ const Product_detail = () => {
   const[product, setProduct] = useState(null)
   const[selectsize, setSelectsize] = useState('')
   const getProductDetail = async () =>{
-    let url = `https://my-json-server.typicode.com/jeww1234/shopping_react/products/${id}`
+    let url = `https://my-json-server.typicode.com/jeww1234/shopping/products/${id}`
     let response = await fetch(url)
     let data = await response.json()
     setProduct(data)
